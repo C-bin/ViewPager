@@ -15,6 +15,8 @@
 		87C568E71BC7B249002FE748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */; };
 		87C568F21BC7B249002FE748 /* LSYViewPagerVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568F11BC7B249002FE748 /* LSYViewPagerVCTests.m */; };
 		87C568FD1BC7B249002FE748 /* LSYViewPagerVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */; };
+		87C5690C1BC7B282002FE748 /* LSYViewPagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */; settings = {ASSET_TAGS = (); }; };
+		87C5690F1BC7DA21002FE748 /* LSYBackGroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		87C568F81BC7B249002FE748 /* LSYViewPagerVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSYViewPagerVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVCUITests.m; sourceTree = "<group>"; };
 		87C568FE1BC7B249002FE748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87C5690A1BC7B282002FE748 /* LSYViewPagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYViewPagerVC.h; sourceTree = "<group>"; };
+		87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVC.m; sourceTree = "<group>"; };
+		87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYBackGroundVC.h; sourceTree = "<group>"; };
+		87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYBackGroundVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +109,12 @@
 			children = (
 				87C568DA1BC7B249002FE748 /* AppDelegate.h */,
 				87C568DB1BC7B249002FE748 /* AppDelegate.m */,
+				87C5690A1BC7B282002FE748 /* LSYViewPagerVC.h */,
+				87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */,
 				87C568DD1BC7B249002FE748 /* ViewController.h */,
 				87C568DE1BC7B249002FE748 /* ViewController.m */,
+				87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */,
+				87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */,
 				87C568E01BC7B249002FE748 /* Main.storyboard */,
 				87C568E31BC7B249002FE748 /* Assets.xcassets */,
 				87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */,
@@ -272,6 +282,8 @@
 			files = (
 				87C568DF1BC7B249002FE748 /* ViewController.m in Sources */,
 				87C568DC1BC7B249002FE748 /* AppDelegate.m in Sources */,
+				87C5690F1BC7DA21002FE748 /* LSYBackGroundVC.m in Sources */,
+				87C5690C1BC7B282002FE748 /* LSYViewPagerVC.m in Sources */,
 				87C568D91BC7B249002FE748 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSYViewPagerVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSYViewPagerVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";

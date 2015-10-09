@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LSYBackGroundVC : UIViewController
-
+@property (nonatomic,strong) UIColor *bgColor;
 @end

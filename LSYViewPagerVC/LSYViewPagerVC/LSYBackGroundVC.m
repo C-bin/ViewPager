@@ -23,7 +23,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)setBgColor:(UIColor *)bgColor
+{
+    _bgColor = bgColor;
+    self.view.backgroundColor = bgColor;
+}
 /*
 #pragma mark - Navigation
 

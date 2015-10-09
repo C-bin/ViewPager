@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "LSYViewPagerVC.h"
+@interface ViewController : LSYViewPagerVC
 
 
 @end

@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87C568D91BC7B249002FE748 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568D81BC7B249002FE748 /* main.m */; };
+		87C568DC1BC7B249002FE748 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568DB1BC7B249002FE748 /* AppDelegate.m */; };
+		87C568DF1BC7B249002FE748 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568DE1BC7B249002FE748 /* ViewController.m */; };
+		87C568E21BC7B249002FE748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C568E01BC7B249002FE748 /* Main.storyboard */; };
+		87C568E41BC7B249002FE748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C568E31BC7B249002FE748 /* Assets.xcassets */; };
+		87C568E71BC7B249002FE748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */; };
+		87C568F21BC7B249002FE748 /* LSYViewPagerVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568F11BC7B249002FE748 /* LSYViewPagerVCTests.m */; };
+		87C568FD1BC7B249002FE748 /* LSYViewPagerVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		87C568EE1BC7B249002FE748 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87C568CC1BC7B249002FE748 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87C568D31BC7B249002FE748;
+			remoteInfo = LSYViewPagerVC;
+		};
+		87C568F91BC7B249002FE748 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87C568CC1BC7B249002FE748 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87C568D31BC7B249002FE748;
+			remoteInfo = LSYViewPagerVC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		87C568D41BC7B249002FE748 /* LSYViewPagerVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSYViewPagerVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C568D81BC7B249002FE748 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87C568DA1BC7B249002FE748 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		87C568DB1BC7B249002FE748 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		87C568DD1BC7B249002FE748 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		87C568DE1BC7B249002FE748 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		87C568E11BC7B249002FE748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87C568E31BC7B249002FE748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87C568E61BC7B249002FE748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87C568E81BC7B249002FE748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87C568ED1BC7B249002FE748 /* LSYViewPagerVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSYViewPagerVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C568F11BC7B249002FE748 /* LSYViewPagerVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVCTests.m; sourceTree = "<group>"; };
+		87C568F31BC7B249002FE748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87C568F81BC7B249002FE748 /* LSYViewPagerVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSYViewPagerVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVCUITests.m; sourceTree = "<group>"; };
+		87C568FE1BC7B249002FE748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87C568D11BC7B249002FE748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568EA1BC7B249002FE748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568F51BC7B249002FE748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87C568CB1BC7B249002FE748 = {
+			isa = PBXGroup;
+			children = (
+				87C568D61BC7B249002FE748 /* LSYViewPagerVC */,
+				87C568F01BC7B249002FE748 /* LSYViewPagerVCTests */,
+				87C568FB1BC7B249002FE748 /* LSYViewPagerVCUITests */,
+				87C568D51BC7B249002FE748 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87C568D51BC7B249002FE748 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87C568D41BC7B249002FE748 /* LSYViewPagerVC.app */,
+				87C568ED1BC7B249002FE748 /* LSYViewPagerVCTests.xctest */,
+				87C568F81BC7B249002FE748 /* LSYViewPagerVCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87C568D61BC7B249002FE748 /* LSYViewPagerVC */ = {
+			isa = PBXGroup;
+			children = (
+				87C568DA1BC7B249002FE748 /* AppDelegate.h */,
+				87C568DB1BC7B249002FE748 /* AppDelegate.m */,
+				87C568DD1BC7B249002FE748 /* ViewController.h */,
+				87C568DE1BC7B249002FE748 /* ViewController.m */,
+				87C568E01BC7B249002FE748 /* Main.storyboard */,
+				87C568E31BC7B249002FE748 /* Assets.xcassets */,
+				87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */,
+				87C568E81BC7B249002FE748 /* Info.plist */,
+				87C568D71BC7B249002FE748 /* Supporting Files */,
+			);
+			path = LSYViewPagerVC;
+			sourceTree = "<group>";
+		};
+		87C568D71BC7B249002FE748 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87C568D81BC7B249002FE748 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87C568F01BC7B249002FE748 /* LSYViewPagerVCTests */ = {
+			isa = PBXGroup;
+			children = (
+				87C568F11BC7B249002FE748 /* LSYViewPagerVCTests.m */,
+				87C568F31BC7B249002FE748 /* Info.plist */,
+			);
+			path = LSYViewPagerVCTests;
+			sourceTree = "<group>";
+		};
+		87C568FB1BC7B249002FE748 /* LSYViewPagerVCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */,
+				87C568FE1BC7B249002FE748 /* Info.plist */,
+			);
+			path = LSYViewPagerVCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87C568D31BC7B249002FE748 /* LSYViewPagerVC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C569011BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVC" */;
+			buildPhases = (
+				87C568D01BC7B249002FE748 /* Sources */,
+				87C568D11BC7B249002FE748 /* Frameworks */,
+				87C568D21BC7B249002FE748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LSYViewPagerVC;
+			productName = LSYViewPagerVC;
+			productReference = 87C568D41BC7B249002FE748 /* LSYViewPagerVC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		87C568EC1BC7B249002FE748 /* LSYViewPagerVCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C569041BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCTests" */;
+			buildPhases = (
+				87C568E91BC7B249002FE748 /* Sources */,
+				87C568EA1BC7B249002FE748 /* Frameworks */,
+				87C568EB1BC7B249002FE748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87C568EF1BC7B249002FE748 /* PBXTargetDependency */,
+			);
+			name = LSYViewPagerVCTests;
+			productName = LSYViewPagerVCTests;
+			productReference = 87C568ED1BC7B249002FE748 /* LSYViewPagerVCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		87C568F71BC7B249002FE748 /* LSYViewPagerVCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87C569071BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCUITests" */;
+			buildPhases = (
+				87C568F41BC7B249002FE748 /* Sources */,
+				87C568F51BC7B249002FE748 /* Frameworks */,
+				87C568F61BC7B249002FE748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87C568FA1BC7B249002FE748 /* PBXTargetDependency */,
+			);
+			name = LSYViewPagerVCUITests;
+			productName = LSYViewPagerVCUITests;
+			productReference = 87C568F81BC7B249002FE748 /* LSYViewPagerVCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87C568CC1BC7B249002FE748 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = okwei;
+				TargetAttributes = {
+					87C568D31BC7B249002FE748 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					87C568EC1BC7B249002FE748 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 87C568D31BC7B249002FE748;
+					};
+					87C568F71BC7B249002FE748 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 87C568D31BC7B249002FE748;
+					};
+				};
+			};
+			buildConfigurationList = 87C568CF1BC7B249002FE748 /* Build configuration list for PBXProject "LSYViewPagerVC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 87C568CB1BC7B249002FE748;
+			productRefGroup = 87C568D51BC7B249002FE748 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87C568D31BC7B249002FE748 /* LSYViewPagerVC */,
+				87C568EC1BC7B249002FE748 /* LSYViewPagerVCTests */,
+				87C568F71BC7B249002FE748 /* LSYViewPagerVCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87C568D21BC7B249002FE748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C568E71BC7B249002FE748 /* LaunchScreen.storyboard in Resources */,
+				87C568E41BC7B249002FE748 /* Assets.xcassets in Resources */,
+				87C568E21BC7B249002FE748 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568EB1BC7B249002FE748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568F61BC7B249002FE748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87C568D01BC7B249002FE748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C568DF1BC7B249002FE748 /* ViewController.m in Sources */,
+				87C568DC1BC7B249002FE748 /* AppDelegate.m in Sources */,
+				87C568D91BC7B249002FE748 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568E91BC7B249002FE748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C568F21BC7B249002FE748 /* LSYViewPagerVCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		87C568F41BC7B249002FE748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C568FD1BC7B249002FE748 /* LSYViewPagerVCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87C568EF1BC7B249002FE748 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87C568D31BC7B249002FE748 /* LSYViewPagerVC */;
+			targetProxy = 87C568EE1BC7B249002FE748 /* PBXContainerItemProxy */;
+		};
+		87C568FA1BC7B249002FE748 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87C568D31BC7B249002FE748 /* LSYViewPagerVC */;
+			targetProxy = 87C568F91BC7B249002FE748 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		87C568E01BC7B249002FE748 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C568E11BC7B249002FE748 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C568E61BC7B249002FE748 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87C568FF1BC7B249002FE748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87C569001BC7B249002FE748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87C569021BC7B249002FE748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LSYViewPagerVC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		87C569031BC7B249002FE748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LSYViewPagerVC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		87C569051BC7B249002FE748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LSYViewPagerVCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LSYViewPagerVC.app/LSYViewPagerVC";
+			};
+			name = Debug;
+		};
+		87C569061BC7B249002FE748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LSYViewPagerVCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LSYViewPagerVC.app/LSYViewPagerVC";
+			};
+			name = Release;
+		};
+		87C569081BC7B249002FE748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LSYViewPagerVCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LSYViewPagerVC;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		87C569091BC7B249002FE748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LSYViewPagerVCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okwei.LSYViewPagerVCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LSYViewPagerVC;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87C568CF1BC7B249002FE748 /* Build configuration list for PBXProject "LSYViewPagerVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C568FF1BC7B249002FE748 /* Debug */,
+				87C569001BC7B249002FE748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87C569011BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C569021BC7B249002FE748 /* Debug */,
+				87C569031BC7B249002FE748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87C569041BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C569051BC7B249002FE748 /* Debug */,
+				87C569061BC7B249002FE748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		87C569071BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87C569081BC7B249002FE748 /* Debug */,
+				87C569091BC7B249002FE748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87C568CC1BC7B249002FE748 /* Project object */;
+}

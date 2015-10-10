@@ -20,8 +20,10 @@
 -(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index;
 -(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index;
 -(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index;
-
+-(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager;
+-(CGFloat)heightForheaderOfViewPager:(LSYViewPagerVC *)viewPager;
 @end
+
 @interface LSYViewPagerVC : UIViewController
 @property (nonatomic,weak) id<LSYViewPagerVCDataSource>dataSource;
 @property (nonatomic,weak) id<LSYViewPagerVCDelegate>delegate;

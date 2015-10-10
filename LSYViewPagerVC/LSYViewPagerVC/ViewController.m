@@ -22,6 +22,11 @@
     [super viewDidLoad];
     self.delegate = self;
     self.dataSource = self;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
+    NSData * jsonData = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    NSLog(@"%@",jsonDic);
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager

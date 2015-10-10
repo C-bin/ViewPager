@@ -12,10 +12,18 @@
 
 @end
 @protocol LSYViewPagerVCDataSource <NSObject>
+@required
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager;
 -(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index;
+
+@optional
+-(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index;
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index;
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index;
+
 @end
 @interface LSYViewPagerVC : UIViewController
 @property (nonatomic,weak) id<LSYViewPagerVCDataSource>dataSource;
 @property (nonatomic,weak) id<LSYViewPagerVCDelegate>delegate;
+-(void)reload;
 @end

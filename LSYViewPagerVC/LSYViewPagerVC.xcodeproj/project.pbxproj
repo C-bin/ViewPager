@@ -17,6 +17,7 @@
 		87C568FD1BC7B249002FE748 /* LSYViewPagerVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */; };
 		87C5690C1BC7B282002FE748 /* LSYViewPagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */; settings = {ASSET_TAGS = (); }; };
 		87C5690F1BC7DA21002FE748 /* LSYBackGroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */; settings = {ASSET_TAGS = (); }; };
+		87E0A9F91BC8E93B00ECC89A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 87E0A9F81BC8E93B00ECC89A /* data.json */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVC.m; sourceTree = "<group>"; };
 		87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYBackGroundVC.h; sourceTree = "<group>"; };
 		87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYBackGroundVC.m; sourceTree = "<group>"; };
+		87E0A9F81BC8E93B00ECC89A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				87C568DE1BC7B249002FE748 /* ViewController.m */,
 				87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */,
 				87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */,
+				87E0A9F81BC8E93B00ECC89A /* data.json */,
 				87C568E01BC7B249002FE748 /* Main.storyboard */,
 				87C568E31BC7B249002FE748 /* Assets.xcassets */,
 				87C568E51BC7B249002FE748 /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E0A9F91BC8E93B00ECC89A /* data.json in Resources */,
 				87C568E71BC7B249002FE748 /* LaunchScreen.storyboard in Resources */,
 				87C568E41BC7B249002FE748 /* Assets.xcassets in Resources */,
 				87C568E21BC7B249002FE748 /* Main.storyboard in Resources */,
@@ -512,6 +516,7 @@
 				87C569031BC7B249002FE748 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87C569041BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				87C569061BC7B249002FE748 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87C569071BC7B249002FE748 /* Build configuration list for PBXNativeTarget "LSYViewPagerVCUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				87C569091BC7B249002FE748 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

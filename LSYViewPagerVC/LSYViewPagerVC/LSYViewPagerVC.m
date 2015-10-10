@@ -10,8 +10,9 @@
 
 @interface LSYViewPagerVC ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 {
-    NSInteger numberOfViewController;
-    NSArray *arrayOfViewController;
+    NSInteger numberOfViewController;   //VC的总数量
+    NSArray *arrayOfViewController;     //存放VC的数组
+    NSArray *arrayOfViewControllerButton;    //存放VC Button的数组
     
 }
 @property (nonatomic,strong) UIPageViewController *pageViewController;
@@ -38,6 +39,10 @@
 -(void)setDataSource:(id<LSYViewPagerVCDataSource>)dataSource
 {
     _dataSource = dataSource;
+    
+}
+-(void)reload
+{
     if ([self.dataSource respondsToSelector:@selector(numberOfViewControllersInViewPager:)]) {
         numberOfViewController = [self.dataSource numberOfViewControllersInViewPager:self];
         NSMutableArray *mutableArray = [NSMutableArray array];
@@ -45,6 +50,16 @@
             if ([self.dataSource respondsToSelector:@selector(viewPager:indexOfViewControllers:)]) {
                 [mutableArray addObject:[self.dataSource viewPager:self indexOfViewControllers:i]];
             }
+            if ([self.dataSource respondsToSelector:@selector(viewPager:titleWithIndexOfViewControllers:)]) {
+                
+            }
+            if ([self.dataSource respondsToSelector:@selector(viewPager:colorWithSelectedOfViewControllers:)]) {
+                
+            }
+            if ([self.dataSource respondsToSelector:@selector(viewPager:colorWithUnSelectedOfViewControllers:)]) {
+                
+            }
+            
         }
         arrayOfViewController = [mutableArray copy];
     }

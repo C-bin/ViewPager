@@ -20,12 +20,20 @@
 -(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index;
 -(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index;
 -(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index;
+-(CGFloat)heightForTitleOfViewPager:(LSYViewPagerVC *)viewPager;
 -(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager;
--(CGFloat)heightForheaderOfViewPager:(LSYViewPagerVC *)viewPager;
+-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager;
 @end
 
 @interface LSYViewPagerVC : UIViewController
 @property (nonatomic,weak) id<LSYViewPagerVCDataSource>dataSource;
 @property (nonatomic,weak) id<LSYViewPagerVCDelegate>delegate;
 -(void)reload;
+@end
+
+
+#pragma -mark View Controller Title Button
+
+@interface LSYViewPagerTitleButton : UIButton
+
 @end

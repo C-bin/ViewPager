@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "LSYBackGroundVC.h"
 @interface ViewController ()<LSYViewPagerVCDataSource>
-
+@property (nonatomic,strong) NSArray *titleArray;
 @end
 
 @implementation ViewController
@@ -20,8 +20,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _titleArray = @[@"11111111",@"222222",@"3",@"44444",@"5555555"];
     self.delegate = self;
     self.dataSource = self;
+    UIPageViewController *page = [[UIPageViewController alloc] init];
+    for (id view in page.view.subviews) {
+        NSLog(@"%@",NSStringFromClass([view class]));
+    }
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager
@@ -81,10 +86,26 @@
     headerView.backgroundColor = [UIColor greenColor];
     return headerView;
 }
-//-(CGFloat)heightForheaderOfViewPager:(LSYViewPagerVC *)viewPager
-//{
-//    return 100;
-//}
+-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
+{
+    return 100;
+}
+-(CGFloat)heightForTitleOfViewPager:(LSYViewPagerVC *)viewPager
+{
+    return 30;
+}
+-(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index
+{
+    return self.titleArray[index];
+}
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index
+{
+    return [UIColor redColor];
+}
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index
+{
+    return [UIColor blackColor];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

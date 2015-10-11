@@ -16,6 +16,7 @@
     UIView *headerView;     //头部视图
     CGRect oldRect;   //用来保存title布局的Rect
     LSYViewPagerTitleButton *oldButton;
+    NSInteger pendingVCIndex;   //将要显示的View Controller 索引
     
 }
 @property (nonatomic,strong) UIPageViewController *pageViewController;
@@ -59,6 +60,7 @@
 -(void)reload
 {
     if ([self.dataSource respondsToSelector:@selector(numberOfViewControllersInViewPager:)]) {
+        oldRect = CGRectZero;
         numberOfViewController = [self.dataSource numberOfViewControllersInViewPager:self];
         NSMutableArray *mutableArrayOfVC = [NSMutableArray array];
         NSMutableArray <LSYViewPagerTitleButton *> *mutableArrayOfBtn = [NSMutableArray array];
@@ -120,12 +122,29 @@
     sender.selected = YES;
     oldButton = sender;
     NSInteger index = [arrayOfViewControllerButton indexOfObject:sender];
-    UIScrollView *scrollView = _pageViewController.view.subviews.firstObject;
-    scrollView.contentOffset = CGPointMake(index*self.view.frame.size.width, 0);
+    [_pageViewController setViewControllers:@[arrayOfViewController[index]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
 }
+-(void)p_titleButtonConvert:(LSYViewPagerTitleButton *)sender
+{
+    oldButton.selected = NO;
+    sender.selected = YES;
+    oldButton = sender;
+}
 #pragma mark -UIPageViewControllerDelegate
-
+- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
+{
+    if (completed) {
+        if (pendingVCIndex != [arrayOfViewController indexOfObject:previousViewControllers[0]]) {
+            [self p_titleSelectIndex:pendingVCIndex];
+        }
+        
+    }
+}
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
+{
+    pendingVCIndex = [arrayOfViewController indexOfObject:pendingViewControllers[0]];
+}
 #pragma mark -UIPageViewControllerDataSource
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
@@ -134,7 +153,9 @@
         return nil;
     }
     else{
+        
         return arrayOfViewController[--index];
+        
     }
 }
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -144,18 +165,23 @@
         return nil;
     }
     else{
+        
         return arrayOfViewController[++index];
     }
+}
+-(void)p_titleSelectIndex:(NSInteger)index
+{
+    [self p_titleButtonConvert:arrayOfViewControllerButton[index]];
 }
 -(void)viewDidLayoutSubviews
 {
     headerView.frame = CGRectMake(0, self.topLayoutGuide.length, self.view.frame.size.width,[self.dataSource respondsToSelector:@selector(heightForHeaderOfViewPager:)]?[self.dataSource heightForHeaderOfViewPager:self]:0);
-    _titleBackground.frame = CGRectMake(0, headerView.frame.origin.y+headerView.frame.size.height, self.view.frame.size.width,[self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
+    _titleBackground.frame = CGRectMake(0, (headerView.frame.size.height)?headerView.frame.origin.y+headerView.frame.size.height:self.topLayoutGuide.length, self.view.frame.size.width,[self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
     if (arrayOfViewControllerButton.count) {
         
         _titleBackground.contentSize = CGSizeMake(arrayOfViewControllerButton.lastObject.frame.size.width+arrayOfViewControllerButton.lastObject.frame.origin.x, _titleBackground.frame.size.height);
     }
-    _pageViewController.view.frame = CGRectMake(0, _titleBackground.frame.origin.y+_titleBackground.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+    _pageViewController.view.frame = CGRectMake(0, _titleBackground.frame.origin.y+_titleBackground.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-(_titleBackground.frame.origin.y+_titleBackground.frame.size.height));
 }
 #pragma maek 计算字体宽度
 -(CGFloat)p_fontText:(NSString *)text withFontHeight:(CGFloat)height

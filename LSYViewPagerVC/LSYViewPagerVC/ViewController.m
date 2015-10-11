@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LSYBackGroundVC.h"
+#import "TestTabView.h"
 @interface ViewController ()<LSYViewPagerVCDataSource>
 @property (nonatomic,strong) NSArray *titleArray;
 @end
@@ -20,13 +21,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _titleArray = @[@"11111111",@"222222",@"3",@"44444",@"5555555"];
+    self.title = @"ViewPager";
+    _titleArray = @[@"分类1",@"分类2",@"分类3",@"分类4",@"分类5"];
     self.delegate = self;
     self.dataSource = self;
-    UIPageViewController *page = [[UIPageViewController alloc] init];
-    for (id view in page.view.subviews) {
-        NSLog(@"%@",NSStringFromClass([view class]));
-    }
+    [self reload];
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager
@@ -38,23 +37,22 @@
     switch (index) {
         case 0:
         {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor redColor];
-            return backGround;
+            TestTabView *tableViewVC = [[TestTabView alloc] init];
+            return tableViewVC;
+            ;
         }
             break;
         case 1:
         {
             LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor blackColor];
+            backGround.bgColor = [UIColor blueColor];
             return backGround;
         }
             break;
         case 2:
         {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor blueColor];
-            return backGround;
+            TestTabView *tableViewVC = [[TestTabView alloc] init];
+            return tableViewVC;
         }
             break;
         case 3:
@@ -80,16 +78,16 @@
             break;
     }
 }
--(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
-{
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = [UIColor greenColor];
-    return headerView;
-}
--(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
-{
-    return 100;
-}
+//-(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
+//{
+//    UIView *headerView = [[UIView alloc] init];
+//    headerView.backgroundColor = [UIColor greenColor];
+//    return headerView;
+//}
+//-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
+//{
+//    return 100;
+//}
 -(CGFloat)heightForTitleOfViewPager:(LSYViewPagerVC *)viewPager
 {
     return 30;

@@ -3,7 +3,7 @@
 
 ---
 实现效果：<br>
-![](https://github.com/GGGHub/ViewPager/raw/master/AlbumPicker/ViewPager.gif "没有头部视图")
-![](https://github.com/GGGHub/ViewPager/raw/master/AlbumPicker/ViewPager1.gif "有头部视图")<br>
+![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/ViewPager.gif "没有头部视图")
+![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/ViewPager1.gif "有头部视图")<br>
 
 ---

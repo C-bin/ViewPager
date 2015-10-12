@@ -11,6 +11,7 @@
 #import "TestTabView.h"
 @interface ViewController ()<LSYViewPagerVCDataSource,LSYViewPagerVCDelegate>
 @property (nonatomic,strong) NSArray *titleArray;
+@property (nonatomic,strong) UIView *headerView;
 @end
 
 @implementation ViewController
@@ -27,6 +28,17 @@
     self.dataSource = self;
     [self reload];
     // Do any additional setup after loading the view, typically from a nib.
+}
+-(UIView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [[UIView alloc] init];
+        _headerView.backgroundColor = [UIColor colorWithRed:120/255.0f green:210/255.0f blue:249/255.0f alpha:1];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+        label.text = @"我是头部视图";
+        [_headerView addSubview:label];
+    }
+    return _headerView;
 }
 #pragma View Pager Data Source
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager
@@ -79,16 +91,14 @@
             break;
     }
 }
-//-(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
-//{
-//    UIView *headerView = [[UIView alloc] init];
-//    headerView.backgroundColor = [UIColor greenColor];
-//    return headerView;
-//}
-//-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
-//{
-//    return 100;
-//}
+-(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
+{
+    return self.headerView;
+}
+-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
+{
+    return 100;
+}
 -(CGFloat)heightForTitleOfViewPager:(LSYViewPagerVC *)viewPager
 {
     return 30;

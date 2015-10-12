@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "LSYBackGroundVC.h"
 #import "TestTabView.h"
-@interface ViewController ()<LSYViewPagerVCDataSource>
+@interface ViewController ()<LSYViewPagerVCDataSource,LSYViewPagerVCDelegate>
 @property (nonatomic,strong) NSArray *titleArray;
 @end
 
@@ -22,12 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ViewPager";
-    _titleArray = @[@"分类1",@"分类2",@"分类3",@"分类4",@"分类5"];
+    _titleArray = @[@"分类1",@"分类2",@"分类3",@"长标题分类4",@"分类5"];
     self.delegate = self;
     self.dataSource = self;
     [self reload];
     // Do any additional setup after loading the view, typically from a nib.
 }
+#pragma View Pager Data Source
 -(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager
 {
     return 5;
@@ -103,6 +104,15 @@
 -(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index
 {
     return [UIColor blackColor];
+}
+#pragma View Pager Delegate
+-(void)viewPagerViewController:(LSYViewPagerVC *)viewPager willScrollerWithCurrentViewController:(UIViewController *)ViewController
+{
+    
+}
+-(void)viewPagerViewController:(LSYViewPagerVC *)viewPager didFinishScrollWithCurrentViewController:(UIViewController *)viewController
+{
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

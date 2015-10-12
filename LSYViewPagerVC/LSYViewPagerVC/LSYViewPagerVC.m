@@ -91,16 +91,25 @@
                 [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[self.dataSource viewPager:self colorWithSelectedOfViewControllers:i] forState:UIControlStateSelected];
                 
             }
+            else    //默认选中颜色为红色
+            {
+                [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+            }
             if ([self.dataSource respondsToSelector:@selector(viewPager:colorWithUnSelectedOfViewControllers:)]) {
                 [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[self.dataSource viewPager:self colorWithUnSelectedOfViewControllers:i] forState:UIControlStateNormal];
+            }
+            else    //默认没有选中颜色为黑色
+            {
+                  [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             }
             
         }
         if (mutableArrayOfBtn.count && mutableArrayOfBtn.lastObject.frame.origin.x + mutableArrayOfBtn.lastObject.frame.size.width<self.view.frame.size.width) //当所有按钮尺寸小于屏幕宽度的时候要重新布局
         {
             oldRect = CGRectZero;
+            CGFloat padding = self.view.frame.size.width-(mutableArrayOfBtn.lastObject.frame.origin.x + mutableArrayOfBtn.lastObject.frame.size.width);
             for (LSYViewPagerTitleButton *button in mutableArrayOfBtn) {
-                button.frame = CGRectMake(oldRect.origin.x+oldRect.size.width, 0, self.view.frame.size.width/mutableArrayOfBtn.count, [self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
+                button.frame = CGRectMake(oldRect.origin.x+oldRect.size.width, 0,button.frame.size.width+padding/mutableArrayOfBtn.count, [self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
                 oldRect = button.frame;
             }
         }
@@ -137,6 +146,9 @@
     if (completed) {
         if (pendingVCIndex != [arrayOfViewController indexOfObject:previousViewControllers[0]]) {
             [self p_titleSelectIndex:pendingVCIndex];
+            if ([self.delegate respondsToSelector:@selector(viewPagerViewController:didFinishScrollWithCurrentViewController:)]) {
+                [self.delegate viewPagerViewController:self didFinishScrollWithCurrentViewController:[arrayOfViewController objectAtIndex:pendingVCIndex]];
+            }
         }
         
     }
@@ -144,6 +156,9 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
 {
     pendingVCIndex = [arrayOfViewController indexOfObject:pendingViewControllers[0]];
+    if ([self.delegate respondsToSelector:@selector(viewPagerViewController:willScrollerWithCurrentViewController:)]) {
+        [self.delegate viewPagerViewController:self willScrollerWithCurrentViewController:pageViewController.viewControllers[0]];
+    }
 }
 #pragma mark -UIPageViewControllerDataSource
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
@@ -186,9 +201,10 @@
 #pragma maek 计算字体宽度
 -(CGFloat)p_fontText:(NSString *)text withFontHeight:(CGFloat)height
 {
+    CGFloat padding = 20;
     NSDictionary *fontAttribute = @{NSFontAttributeName : [UIFont systemFontOfSize:14]};
     CGSize fontSize = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, height) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:fontAttribute context:nil].size;
-    return fontSize.width+20;
+    return fontSize.width+padding;
 }
 
 @end
@@ -207,7 +223,7 @@
 -(void)drawRect:(CGRect)rect
 {
     if (self.selected) {
-        CGFloat lineWidth = 5;
+        CGFloat lineWidth = 2.5;
         CGColorRef color = self.titleLabel.textColor.CGColor;
         CGContextRef ctx = UIGraphicsGetCurrentContext();
         CGContextSetStrokeColorWithColor(ctx, color);

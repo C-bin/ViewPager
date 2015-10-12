@@ -34,3 +34,40 @@
     self.dataSource = self;
 }
 ```
+###代理方法实现
+```objective-c
+-(NSInteger)numberOfViewControllersInViewPager:(LSYViewPagerVC *)viewPager
+{
+    //返回要实现滚动效果的控制器数量
+}
+-(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index
+{
+    //返回每个位置下的控制器
+}
+-(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
+{
+    //返回自定义的头部视图，不实现该代理方法则默认没有头部视图
+}
+-(CGFloat)heightForHeaderOfViewPager:(LSYViewPagerVC *)viewPager
+{
+    //返回头部视图的高度
+}
+-(CGFloat)heightForTitleOfViewPager:(LSYViewPagerVC *)viewPager
+{
+    //返回控制器显示title的高度
+}
+-(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index
+{
+    //返回每一个控制器title的内容
+}
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index
+{
+    //返回控制器选中时title的颜色
+    //默认为红色
+}
+-(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index
+{
+    //返回控制器没有选中时title的颜色
+    //默认为黑色
+}
+```

@@ -33,7 +33,7 @@
 /**
  用来设置当前索引下返回的控制器
  */
--(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index;
+-(UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index;
 /**
  给每一个控制器设置一个标题
  */

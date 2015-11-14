@@ -12,7 +12,7 @@
 {
     NSInteger numberOfViewController;   //VC的总数量
     NSArray *arrayOfViewController;     //存放VC的数组
-    NSArray <LSYViewPagerTitleButton *>*arrayOfViewControllerButton;    //存放VC Button的数组
+    NSArray *arrayOfViewControllerButton;    //存放VC Button的数组
     UIView *headerView;     //头部视图
     CGRect oldRect;   //用来保存title布局的Rect
     LSYViewPagerTitleButton *oldButton;
@@ -208,7 +208,7 @@
     _titleBackground.frame = CGRectMake(0, (headerView.frame.size.height)?headerView.frame.origin.y+headerView.frame.size.height:self.topLayoutGuide.length, self.view.frame.size.width,[self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
     if (arrayOfViewControllerButton.count) {
         
-        _titleBackground.contentSize = CGSizeMake(arrayOfViewControllerButton.lastObject.frame.size.width+arrayOfViewControllerButton.lastObject.frame.origin.x, _titleBackground.frame.size.height);
+        _titleBackground.contentSize = CGSizeMake(((UIButton *)arrayOfViewControllerButton.lastObject).frame.size.width+((UIButton *)arrayOfViewControllerButton.lastObject).frame.origin.x, _titleBackground.frame.size.height);
     }
     _pageViewController.view.frame = CGRectMake(0, _titleBackground.frame.origin.y+_titleBackground.frame.size.height, self.view.frame.size.width, self.view.frame.size.height-(_titleBackground.frame.origin.y+_titleBackground.frame.size.height));
 }

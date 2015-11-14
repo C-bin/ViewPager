@@ -3,8 +3,8 @@
 
 ---
 实现效果：<br>
-![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/ViewPager.gif "没有头部视图")
-![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/ViewPager2.gif "有头部视图")<br>
+![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/style1.gif "没有头部视图")
+![](https://github.com/GGGHub/ViewPager/raw/master/LSYViewPagerVC/style2.gif "有头部视图")<br>
 
 ---
 

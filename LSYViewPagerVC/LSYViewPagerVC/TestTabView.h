@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TestTabView : UIViewController
-
+@property (nonatomic,copy) NSString *content;
 @end

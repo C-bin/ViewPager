@@ -10,6 +10,7 @@
 @class LSYViewPagerVC;
 #pragma mark View Pager Delegate
 @protocol  LSYViewPagerVCDelegate <NSObject>
+@optional
 /**
  控制器结束滑动时调用该方法，返回当前显示的视图控制器
  */
@@ -33,22 +34,16 @@
  用来设置当前索引下返回的控制器
  */
 -(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index;
-
-@optional
 /**
  给每一个控制器设置一个标题
  */
 -(NSString *)viewPager:(LSYViewPagerVC *)viewPager titleWithIndexOfViewControllers:(NSInteger)index;
+
+@optional
 /**
- 给控制器的标题设置选中的颜色，用来表示当前哪一个控制器显示
- 不过不设置默认选中颜色是红色
+ 设置控制器标题按钮的样式，如果不设置将使用默认的样式，选择为红色，不选中为黑色带有选中下划线
  */
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index;
-/**
- 给控制器的标题设置默认颜色
- 如果不设置默认颜色为黑色
- */
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index;
+-(UIButton *)viewPager:(LSYViewPagerVC *)viewPager titleButtonStyle:(NSInteger)index;
 /**
  设置控制器上面标题的高度
  */

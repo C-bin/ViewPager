@@ -61,20 +61,45 @@
 {
     if ([self.dataSource respondsToSelector:@selector(numberOfViewControllersInViewPager:)]) {
         oldRect = CGRectZero;
+        if (![self.dataSource numberOfViewControllersInViewPager:self]) {
+             @throw [NSException exceptionWithName:@"viewControllerException" reason:@"设置要返回的控制器数量" userInfo:nil];
+        }
         numberOfViewController = [self.dataSource numberOfViewControllersInViewPager:self];
         NSMutableArray *mutableArrayOfVC = [NSMutableArray array];
-        NSMutableArray <LSYViewPagerTitleButton *> *mutableArrayOfBtn = [NSMutableArray array];
+        NSMutableArray *mutableArrayOfBtn = [NSMutableArray array];
         for (int i = 0; i<numberOfViewController; i++) {
             if ([self.dataSource respondsToSelector:@selector(viewPager:indexOfViewControllers:)]) {
-                [mutableArrayOfVC addObject:[self.dataSource viewPager:self indexOfViewControllers:i]];
+                if (![[self.dataSource viewPager:self indexOfViewControllers:i] isKindOfClass:[UIViewController class]]) {
+                    @throw [NSException exceptionWithName:@"viewControllerException" reason:[NSString stringWithFormat:@"第%d个分类下的控制器必须是UIViewController类型或者其子类",i+1] userInfo:nil];
+                }
+                else
+                {
+                    [mutableArrayOfVC addObject:[self.dataSource viewPager:self indexOfViewControllers:i]];
+                }
+                
+            }
+            else{
+                @throw [NSException exceptionWithName:@"viewControllerException" reason:@"设置要显示的控制器" userInfo:nil];
             }
             if ([self.dataSource respondsToSelector:@selector(viewPager:titleWithIndexOfViewControllers:)]) {
                 NSString *buttonTitle = [self.dataSource viewPager:self titleWithIndexOfViewControllers:i];
                 if (arrayOfViewControllerButton.count > i) {
                     [[arrayOfViewControllerButton objectAtIndex:i] removeFromSuperview];
                 }
-                LSYViewPagerTitleButton *button = [[LSYViewPagerTitleButton alloc] init];
+                UIButton *button;
+                if ([self.dataSource respondsToSelector:@selector(viewPager:titleButtonStyle:)]) {
+                    if (![[self.dataSource viewPager:self titleButtonStyle:i] isKindOfClass:[UIButton class]]) {
+                         @throw [NSException exceptionWithName:@"titleException" reason:[NSString stringWithFormat:@"第%d的标题类型必须为UIButton或者其子类",i+1] userInfo:nil];
+                    }
+                    button = [self.dataSource viewPager:self titleButtonStyle:i];
+                }
+                else
+                {
+                    button = [[LSYViewPagerTitleButton alloc] init];
+                }
                 [button addTarget:self action:@selector(p_titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+                
+                
                 button.frame = CGRectMake(oldRect.origin.x+oldRect.size.width, 0, [self p_fontText:buttonTitle withFontHeight:20], [self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
                 oldRect = button.frame;
                 [button setTitle:buttonTitle forState:UIControlStateNormal];
@@ -86,28 +111,17 @@
                 }
                 
             }
+            else
+            {
+                @throw [NSException exceptionWithName:@"titleException" reason:@"每个控制器必须设置一个标题" userInfo:nil];
+            }
             
-            if ([self.dataSource respondsToSelector:@selector(viewPager:colorWithSelectedOfViewControllers:)]) {
-                [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[self.dataSource viewPager:self colorWithSelectedOfViewControllers:i] forState:UIControlStateSelected];
-                
-            }
-            else    //默认选中颜色为红色
-            {
-                [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-            }
-            if ([self.dataSource respondsToSelector:@selector(viewPager:colorWithUnSelectedOfViewControllers:)]) {
-                [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[self.dataSource viewPager:self colorWithUnSelectedOfViewControllers:i] forState:UIControlStateNormal];
-            }
-            else    //默认没有选中颜色为黑色
-            {
-                  [[mutableArrayOfBtn objectAtIndex:i] setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            }
             
         }
-        if (mutableArrayOfBtn.count && mutableArrayOfBtn.lastObject.frame.origin.x + mutableArrayOfBtn.lastObject.frame.size.width<self.view.frame.size.width) //当所有按钮尺寸小于屏幕宽度的时候要重新布局
+        if (mutableArrayOfBtn.count && ((UIButton *)mutableArrayOfBtn.lastObject).frame.origin.x + ((UIButton *)mutableArrayOfBtn.lastObject).frame.size.width<self.view.frame.size.width) //当所有按钮尺寸小于屏幕宽度的时候要重新布局
         {
             oldRect = CGRectZero;
-            CGFloat padding = self.view.frame.size.width-(mutableArrayOfBtn.lastObject.frame.origin.x + mutableArrayOfBtn.lastObject.frame.size.width);
+            CGFloat padding = self.view.frame.size.width-(((UIButton *)mutableArrayOfBtn.lastObject).frame.origin.x + ((UIButton *)mutableArrayOfBtn.lastObject).frame.size.width);
             for (LSYViewPagerTitleButton *button in mutableArrayOfBtn) {
                 button.frame = CGRectMake(oldRect.origin.x+oldRect.size.width, 0,button.frame.size.width+padding/mutableArrayOfBtn.count, [self.dataSource respondsToSelector:@selector(heightForTitleOfViewPager:)]?[self.dataSource heightForTitleOfViewPager:self]:0);
                 oldRect = button.frame;
@@ -217,6 +231,8 @@
     self = [super init];
     if (self) {
         [self.titleLabel setFont:[UIFont systemFontOfSize:14]];
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     }
     return self;
 }

@@ -16,7 +16,6 @@
 		87C568F21BC7B249002FE748 /* LSYViewPagerVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568F11BC7B249002FE748 /* LSYViewPagerVCTests.m */; };
 		87C568FD1BC7B249002FE748 /* LSYViewPagerVCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C568FC1BC7B249002FE748 /* LSYViewPagerVCUITests.m */; };
 		87C5690C1BC7B282002FE748 /* LSYViewPagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */; settings = {ASSET_TAGS = (); }; };
-		87C5690F1BC7DA21002FE748 /* LSYBackGroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */; settings = {ASSET_TAGS = (); }; };
 		ABF3B7911BCA3F25004347C2 /* TestTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF3B7901BCA3F25004347C2 /* TestTabView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -56,8 +55,6 @@
 		87C568FE1BC7B249002FE748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C5690A1BC7B282002FE748 /* LSYViewPagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYViewPagerVC.h; sourceTree = "<group>"; };
 		87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYViewPagerVC.m; sourceTree = "<group>"; };
-		87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYBackGroundVC.h; sourceTree = "<group>"; };
-		87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYBackGroundVC.m; sourceTree = "<group>"; };
 		ABF3B78F1BCA3F25004347C2 /* TestTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTabView.h; sourceTree = "<group>"; };
 		ABF3B7901BCA3F25004347C2 /* TestTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTabView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +113,6 @@
 				87C5690B1BC7B282002FE748 /* LSYViewPagerVC.m */,
 				87C568DD1BC7B249002FE748 /* ViewController.h */,
 				87C568DE1BC7B249002FE748 /* ViewController.m */,
-				87C5690D1BC7DA21002FE748 /* LSYBackGroundVC.h */,
-				87C5690E1BC7DA21002FE748 /* LSYBackGroundVC.m */,
 				ABF3B78F1BCA3F25004347C2 /* TestTabView.h */,
 				ABF3B7901BCA3F25004347C2 /* TestTabView.m */,
 				87C568E01BC7B249002FE748 /* Main.storyboard */,
@@ -288,7 +283,6 @@
 				ABF3B7911BCA3F25004347C2 /* TestTabView.m in Sources */,
 				87C568DF1BC7B249002FE748 /* ViewController.m in Sources */,
 				87C568DC1BC7B249002FE748 /* AppDelegate.m in Sources */,
-				87C5690F1BC7DA21002FE748 /* LSYBackGroundVC.m in Sources */,
 				87C5690C1BC7B282002FE748 /* LSYViewPagerVC.m in Sources */,
 				87C568D91BC7B249002FE748 /* main.m in Sources */,
 			);

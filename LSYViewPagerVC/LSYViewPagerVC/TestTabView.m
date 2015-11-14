@@ -31,7 +31,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = @"GGGHub";
+    cell.textLabel.text = _content;
     return cell;
 }
 - (void)didReceiveMemoryWarning {

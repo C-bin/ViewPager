@@ -60,14 +60,8 @@
 {
     //返回每一个控制器title的内容
 }
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index
+-(UIButton *)viewPager:(LSYViewPagerVC *)viewPager titleButtonStyle:(NSInteger)index
 {
-    //返回控制器选中时title的颜色
-    //默认为红色
-}
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index
-{
-    //返回控制器没有选中时title的颜色
-    //默认为黑色
+	//设置控制器标题按钮的样式，如果不设置将使用默认的样式，选择为红色，不选中为黑色带有选中下划线
 }
 ```

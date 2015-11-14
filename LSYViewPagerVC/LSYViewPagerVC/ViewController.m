@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "LSYBackGroundVC.h"
 #import "TestTabView.h"
 @interface ViewController ()<LSYViewPagerVCDataSource,LSYViewPagerVCDelegate>
 @property (nonatomic,strong) NSArray *titleArray;
@@ -35,7 +34,7 @@
         _headerView = [[UIView alloc] init];
         _headerView.backgroundColor = [UIColor colorWithRed:120/255.0f green:210/255.0f blue:249/255.0f alpha:1];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-        label.text = @"我是头部视图";
+        label.text = @"头部视图";
         [_headerView addSubview:label];
     }
     return _headerView;
@@ -47,49 +46,9 @@
 }
 -(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index
 {
-    switch (index) {
-        case 0:
-        {
-            TestTabView *tableViewVC = [[TestTabView alloc] init];
-            return tableViewVC;
-            ;
-        }
-            break;
-        case 1:
-        {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor blueColor];
-            return backGround;
-        }
-            break;
-        case 2:
-        {
-            TestTabView *tableViewVC = [[TestTabView alloc] init];
-            return tableViewVC;
-        }
-            break;
-        case 3:
-        {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor grayColor];
-            return backGround;
-        }
-            break;
-        case 4:
-        {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor greenColor];
-            return backGround;
-        }
-            break;
-        default:
-        {
-            LSYBackGroundVC *backGround = [[LSYBackGroundVC alloc] init];
-            backGround.bgColor = [UIColor redColor];
-            return backGround;
-        }
-            break;
-    }
+    TestTabView *tableViewVC = [[TestTabView alloc] init];
+    tableViewVC.content = _titleArray[index];
+    return tableViewVC;
 }
 -(UIView *)headerViewForInViewPager:(LSYViewPagerVC *)viewPager
 {
@@ -107,14 +66,8 @@
 {
     return self.titleArray[index];
 }
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithSelectedOfViewControllers:(NSInteger)index
-{
-    return [UIColor redColor];
-}
--(UIColor *)viewPager:(LSYViewPagerVC *)viewPager colorWithUnSelectedOfViewControllers:(NSInteger)index
-{
-    return [UIColor blackColor];
-}
+
+
 #pragma View Pager Delegate
 -(void)viewPagerViewController:(LSYViewPagerVC *)viewPager willScrollerWithCurrentViewController:(UIViewController *)ViewController
 {

@@ -44,7 +44,7 @@
 {
     return 5;
 }
--(__kindof UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index
+-(UIViewController *)viewPager:(LSYViewPagerVC *)viewPager indexOfViewControllers:(NSInteger)index
 {
     TestTabView *tableViewVC = [[TestTabView alloc] init];
     tableViewVC.content = _titleArray[index];

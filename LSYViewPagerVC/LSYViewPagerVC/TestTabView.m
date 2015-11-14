@@ -16,13 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view.
     
+}
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    _tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

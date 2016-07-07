@@ -146,6 +146,7 @@
     oldButton = sender;
     NSInteger index = [arrayOfViewControllerButton indexOfObject:sender];
     [_pageViewController setViewControllers:@[arrayOfViewController[index]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self scrollViewOffset:sender];
     
 }
 -(void)p_titleButtonConvert:(LSYViewPagerTitleButton *)sender
@@ -153,6 +154,22 @@
     oldButton.selected = NO;
     sender.selected = YES;
     oldButton = sender;
+    [self scrollViewOffset:sender];
+
+}
+-(void)scrollViewOffset:(UIButton *)button
+{
+    if (CGRectGetMidX(button.frame)>CGRectGetMidX(self.view.frame)) {
+        if (_titleBackground.contentSize.width<CGRectGetMaxX(self.view.frame)/2+CGRectGetMidX(button.frame)) {
+            [_titleBackground setContentOffset:CGPointMake(_titleBackground.contentSize.width-CGRectGetWidth(self.view.frame), 0) animated:YES];
+        }
+        else{
+            [_titleBackground setContentOffset:CGPointMake(CGRectGetMidX(button.frame)-CGRectGetWidth(self.view.frame)/2, 0) animated:YES];
+        }
+    }
+    else{
+        [_titleBackground setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
 }
 #pragma mark -UIPageViewControllerDelegate
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed

@@ -159,6 +159,9 @@
 }
 -(void)scrollViewOffset:(UIButton *)button
 {
+    if (!(_titleBackground.contentSize.width>CGRectGetWidth(self.view.frame))) {
+        return;
+    }
     if (CGRectGetMidX(button.frame)>CGRectGetMidX(self.view.frame)) {
         if (_titleBackground.contentSize.width<CGRectGetMaxX(self.view.frame)/2+CGRectGetMidX(button.frame)) {
             [_titleBackground setContentOffset:CGPointMake(_titleBackground.contentSize.width-CGRectGetWidth(self.view.frame), 0) animated:YES];

@@ -25,7 +25,6 @@
     _titleArray = @[@"分类1",@"分类2",@"分类3",@"长标题分类4",@"分类5",@"长标题分类6",@"长标题分类7",@"长标题分类8",@"长标题分类9"];
     self.delegate = self;
     self.dataSource = self;
-    [self reload];
     // Do any additional setup after loading the view, typically from a nib.
 }
 -(UIView *)headerView

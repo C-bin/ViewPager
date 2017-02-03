@@ -54,10 +54,10 @@
 -(void)setDataSource:(id<LSYViewPagerVCDataSource>)dataSource
 {
     _dataSource = dataSource;
-    [self reload];
+    [self p_reload];
     
 }
--(void)reload
+-(void)p_reload
 {
     if ([self.dataSource respondsToSelector:@selector(numberOfViewControllersInViewPager:)]) {
         oldRect = CGRectZero;
@@ -178,6 +178,9 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed
 {
     if (completed) {
+        if (pendingVCIndex == NSNotFound) {
+            return;
+        }
         if (pendingVCIndex != [arrayOfViewController indexOfObject:previousViewControllers[0]]) {
             [self p_titleSelectIndex:pendingVCIndex];
             if ([self.delegate respondsToSelector:@selector(viewPagerViewController:didFinishScrollWithCurrentViewController:)]) {
@@ -198,7 +201,7 @@
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSInteger index = [arrayOfViewController indexOfObject:viewController];
-    if (index == 0) {
+    if (index == 0 || index == NSNotFound) {
         return nil;
     }
     else{
@@ -210,7 +213,7 @@
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSInteger index = [arrayOfViewController indexOfObject:viewController];
-    if (index == arrayOfViewController.count-1) {
+    if (index == arrayOfViewController.count-1 || index == NSNotFound) {
         return nil;
     }
     else{

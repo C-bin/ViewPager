@@ -61,10 +61,6 @@
 @interface LSYViewPagerVC : UIViewController
 @property (nonatomic,weak) id<LSYViewPagerVCDataSource>dataSource;
 @property (nonatomic,weak) id<LSYViewPagerVCDelegate>delegate;
-/**
- 用来刷新ViewPager
- */
--(void)reload;
 @end
 
 
